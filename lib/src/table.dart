@@ -1,5 +1,4 @@
 import 'dart:math' as math;
-
 import 'package:easy_table/src/internal/row_callbacks.dart';
 import 'package:easy_table/src/internal/scroll_controllers.dart';
 import 'package:easy_table/src/internal/table_layout_builder.dart';
@@ -233,14 +232,14 @@ class _EasyTableState<ROW> extends State<EasyTable<ROW>> {
                 .pointerScroll(pointerSignal.scrollDelta.dx);
           } */
         },
-        onPointerPanZoomUpdate: (PointerPanZoomUpdateEvent event) {
+        /* onPointerPanZoomUpdate: (PointerPanZoomUpdateEvent event) {
           // trackpad on macOS
           if (_scrollControllers.vertical.hasClients &&
               event.panDelta.dy != 0) {
             _scrollControllers.vertical.position
                 .pointerScroll(-event.panDelta.dy);
           }
-        },
+        },*/
         child: table,
       );
 

@@ -52,14 +52,14 @@ class TableScrollbar extends StatelessWidget {
                 controller: scrollController,
                 thickness: scrollTheme.thickness,
                 radius: scrollTheme.radius,
-                thumbVisibility: true,
+                // thumbVisibility: true,
                 child: ScrollConfiguration(
                     behavior: ScrollConfiguration.of(context)
                         .copyWith(scrollbars: false, dragDevices: {
                       PointerDeviceKind.touch,
                       PointerDeviceKind.mouse,
                       PointerDeviceKind.invertedStylus,
-                      PointerDeviceKind.trackpad
+                      // PointerDeviceKind.trackpad
                     }),
                     child: SingleChildScrollView(
                         controller: scrollController,

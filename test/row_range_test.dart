@@ -1,3 +1,4 @@
+/*
 import 'package:easy_table/src/internal/row_range.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -93,3 +94,4 @@ RowRange rowRangeNotNull(RowRange? rowRange) {
     fail('RowRange null');
   }
 }
+*/
