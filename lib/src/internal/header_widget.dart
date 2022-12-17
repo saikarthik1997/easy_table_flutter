@@ -12,14 +12,14 @@ import 'package:meta/meta.dart';
 
 @internal
 class HeaderWidget<ROW> extends StatelessWidget {
-  const HeaderWidget(
-      {Key? key,
-      required this.layoutSettings,
-      required this.model,
-      required this.resizable,
-      required this.multiSort,
-      required this.horizontalScrollOffsets})
-      : super(key: key);
+  const HeaderWidget({
+    Key? key,
+    required this.layoutSettings,
+    required this.model,
+    required this.resizable,
+    required this.multiSort,
+    required this.horizontalScrollOffsets,
+  }) : super(key: key);
 
   final TableLayoutSettings layoutSettings;
   final EasyTableModel<ROW> model;
@@ -39,6 +39,7 @@ class HeaderWidget<ROW> extends StatelessWidget {
       final EasyTableColumn<ROW> column = model.columnAt(columnIndex);
 
       final Widget cell = EasyTableHeaderCell<ROW>(
+          columnMinWidth: model.minColumnWidth,
           key: ValueKey<int>(columnIndex),
           model: model,
           column: column,
