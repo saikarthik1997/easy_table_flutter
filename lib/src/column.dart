@@ -55,6 +55,8 @@ class EasyTableColumn<ROW> extends ChangeNotifier with ColumnSortMixin {
       TextStyle? headerTextStyle,
       bool cellClip = false,
       Widget? leading,
+      Widget? trailing,
+      bool? showTrailingOnHover,
       EasyTableCellBuilder<ROW>? cellBuilder,
       EasyTableColumnSort<ROW>? sort,
       EasyTableIntValueMapper<ROW>? intValue,
@@ -138,6 +140,8 @@ class EasyTableColumn<ROW> extends ChangeNotifier with ColumnSortMixin {
         fractionDigits: fractionDigits,
         cellBuilder: cellBuilder,
         leading: leading,
+        trailing: trailing,
+        showTrailingOnHover: showTrailingOnHover,
         sort: sort,
         pinStatus: pinStatus,
         stringValueMapper: stringValue,
@@ -175,6 +179,8 @@ class EasyTableColumn<ROW> extends ChangeNotifier with ColumnSortMixin {
       required this.fractionDigits,
       required this.cellBuilder,
       required this.leading,
+      required this.trailing,
+      required this.showTrailingOnHover,
       required this.sort,
       required this.pinStatus,
       required this.stringValueMapper,
@@ -193,6 +199,8 @@ class EasyTableColumn<ROW> extends ChangeNotifier with ColumnSortMixin {
   final dynamic id;
   final String? name;
   final Widget? leading;
+  final Widget? trailing;
+  final bool? showTrailingOnHover;
   final EdgeInsets? cellPadding;
   final EdgeInsets? headerPadding;
   final Alignment? headerAlignment;
