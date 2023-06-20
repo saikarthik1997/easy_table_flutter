@@ -72,12 +72,10 @@ class _EasyTableHeaderCellState extends State<EasyTableHeaderCell> {
     }
     if (widget.column.trailing != null) {
       var trailingWidget = widget.column.trailing;
-      if(widget.column.showTrailingOnHover == true){
         trailingWidget = Visibility(
-          visible: _headerCellHovered,
+          visible: _headerCellHovered || widget.column.showTrailingIcon == true,
             child: trailingWidget!);
-      }
-      children.add(trailingWidget!);
+      children.add(trailingWidget);
     }
 
     Widget header = AxisLayout(
@@ -89,7 +87,7 @@ class _EasyTableHeaderCellState extends State<EasyTableHeaderCell> {
       header = Padding(padding: padding, child: header);
     }
 
-    if(widget.column.showTrailingOnHover == true && widget.column.trailing != null){
+    if(widget.column.trailing != null){
       header = MouseRegion(
           onEnter: (e) => setState(() {
             _headerCellHovered = true;
@@ -122,7 +120,7 @@ class _EasyTableHeaderCellState extends State<EasyTableHeaderCell> {
             child: _resizeWidget(context: context, resizing: resizing))
       ]);
     }
-    return ClipRect(child: header);
+    return ClipRect(key: ValueKey(_headerCellHovered), child: header);
   }
 
   Widget _textWidget(BuildContext context) {
