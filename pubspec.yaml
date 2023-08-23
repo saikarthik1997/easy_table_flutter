@@ -10,9 +10,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  meta: ^1.7.0
-  axis_layout: ^1.0.0
-  collection: ^1.15.0
+  meta: 1.7.0
+  axis_layout: 1.0.0
+  collection: 1.15.0
 
 dev_dependencies:
 #  flutter_test:
